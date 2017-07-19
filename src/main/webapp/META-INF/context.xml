@@ -1,0 +1,19 @@
+<Context>
+    <!--DB CONNECTION-->
+    <Resource name="jdbc/todo_db"
+              auth="Container"
+              type="javax.sql.DataSource"
+              username="root"
+              password="root"
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/taskTrackerDB?useUnicode=true&amp;characterEncoding=UTF-8"/>
+
+    <Realm className="org.apache.catalina.realm.DataSourceRealm"
+           localDataSource="true"
+           dataSourceName="jdbc/todo_db"
+           userTable="users"
+           userNameCol="login"
+           userCredCol="password"
+           userRoleTable="users"
+           roleNameCol="role"/>
+</Context>
