@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="TaskTracker:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="taskTracker.war">
+      <element id="artifact" artifact-name="TaskTracker:war exploded" />
+    </root>
+  </artifact>
+</component>
