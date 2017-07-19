@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.eisgroup.tasktracker.model.Task" table="tasks">
+        <meta attribute="class-description">
+        </meta>
+        <id name="id" type="int" column="id">
+            <generator class="identity"/>
+        </id>
+        <property name="userId" column="user_id" type="int"/>
+        <property name="title" column="title" type="string"/>
+        <property name="date" column="date" type="date"/>
+        <property name="status" column="status">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">com.eisgroup.tasktracker.model.Status</param>
+                <param name="useNamed">true</param>
+            </type>
+        </property>
+        <property name="dashboardOrder" column="dashboard_order" type="int"/>
+        <property name="collapsed" column="collapsed" type="boolean"/>
+        <list name="subTasks" table="subtasks" cascade="all-delete-orphan" lazy="false" inverse="false">
+            <key column="task_id"/>
+            <list-index column="idx"/>
+            <one-to-many class="com.eisgroup.tasktracker.model.SubTask"/>
+        </list>
+        <property name="image" column="image" type="binary" length="1048576"/>
+    </class>
+</hibernate-mapping>

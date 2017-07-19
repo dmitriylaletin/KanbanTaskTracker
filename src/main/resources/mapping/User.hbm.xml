@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.eisgroup.tasktracker.model.User" table="users">
+        <meta attribute="class-description">
+        </meta>
+        <id name="id" type="int" column="id">
+            <generator class="identity"/>
+        </id>
+        <property name="login" column="login" type="string" unique="true"/>
+        <property name="password" column="password" type="string"/>
+        <property name="role" column="role">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">com.eisgroup.tasktracker.model.Role</param>
+                <param name="useNamed">true</param>
+            </type>
+        </property>
+        <property name="email" column="email" type="string"/>
+        <property name="uuid" column="uuid" type="string"/>
+    </class>
+</hibernate-mapping>

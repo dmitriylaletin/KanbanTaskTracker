@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.eisgroup.tasktracker.model.SubTask" table="subtasks">
+        <id name="id" type="int" column="id">
+            <generator class="identity"/>
+        </id>
+        <property name="taskId" column="task_id" type="int"/>
+        <property name="text" column="text" type="string"/>
+        <property name="done" column="done" type="boolean"/>
+    </class>
+</hibernate-mapping>
