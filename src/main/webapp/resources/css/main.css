@@ -1,0 +1,318 @@
+body {
+    font: 100%/1.2 Verdana, Arial, Helvetica, sans-serif;
+    background-color: #EEE;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font-size: 13px;
+    height: 100%;
+}
+
+ul, ol, dl {
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin-top: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+a img {
+    border: none;
+}
+
+a:link {
+    color: #414958;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #4E5869;
+    text-decoration: underline;
+}
+
+a:hover, a:active, a:focus {
+    text-decoration: none;
+}
+
+.container {
+    width: 1000px;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #FFFFFF;
+    height: 150px;
+}
+
+.footer {
+    color: #757575;
+    text-align: center;
+    margin: 5px;
+    height: 50px;
+    float: left;
+    width: 100%;
+}
+
+.copyright {
+    width: 940px;
+    margin: 0 auto;
+}
+
+.copyright p {
+    padding-top: 15px;
+}
+
+.clear {
+    clear: both;
+}
+
+.logo {
+    text-align: left;
+    padding: 10px;
+    float: left;
+}
+
+.descr {
+    float: left;
+    width: 400px;
+    text-align: left;
+    padding-top: 50px;
+}
+
+.welcome {
+    text-align: right;
+    padding-top: 50px;
+    padding-right: 10px;
+    font-weight: normal;
+    float: right;
+    clear: right;
+}
+
+.welcome a {
+    margin-right: 15px;
+    font-size: 12px;
+}
+
+.ui-panel {
+    border-style: none;
+}
+
+.redirect {
+    width: 1000px;
+    height: 100px;
+    background-color: #FFFFFF;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    font-size: 13px;
+    padding-top: 50px;
+}
+
+.loader {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.task {
+    min-width: 300px;
+}
+
+.ui-dashboard-column {
+    width: 33%;
+}
+
+.ui-panel {
+    word-wrap: break-word;
+}
+
+#new_task_form\:title {
+    width: auto;
+}
+
+#new_task_form\:calendar {
+    display: none;
+}
+
+.ui-widget {
+    margin: 2px;
+}
+
+.dashboard-column-title {
+    padding: 5px;
+}
+
+.dashboard-header {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+    font-weight: bold;
+    color: #2779aa;
+}
+
+.new-task-form {
+    float: left;
+    display: block;
+}
+
+.task-clock-right {
+    pointer-events: none;
+    float: right;
+}
+
+.task-clock-left {
+    float: left;
+    margin: 2px;
+}
+
+.task-calendar {
+    margin: 2px;
+}
+
+.task-icons {
+    border: none !important;
+    background: none !important;
+    width: 1em !important;
+}
+
+.task-header {
+    font-size: 100%;
+    font-weight: bold;
+    font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+    color: #2779aa;
+    display: inline-block;
+    width: 70%
+}
+
+.subtask-checkbox {
+    -moz-appearance: none;
+    width: 15px;
+    height: 15px;
+    margin: 0 2px;
+    cursor: pointer;
+}
+
+.subtask-input {
+    width: 55%;
+}
+
+.locale-div {
+    display: inline;
+    float: right;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.locale-image {
+    width: 20px;
+    height: 15px;
+}
+
+.locale {
+    opacity: 0.2;
+}
+
+.locale:hover {
+    opacity: 1;
+}
+
+.locale-active {
+    opacity: 1;
+}
+
+.new-subtask-inplace {
+    margin-left: 3px;
+}
+
+.new-subtask-input {
+    margin-left: 5px !important;
+}
+
+.ui-inplace-save {
+    width: 2em !important;
+}
+
+.ui-inplace-chancel {
+    width: 2em !important;
+}
+
+.file-upload {
+    margin-left: 3px;
+}
+
+.file-upload .ui-widget {
+    float: left;
+}
+
+.file-upload .ui-fileupload-content {
+    display: none;
+}
+
+.file-upload .ui-widget-header {
+    border: none;
+    background: none;
+}
+
+.file-upload .ui-fileupload-buttonbar {
+    padding: 0;
+}
+
+.file-upload .ui-inplace-content {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.file-upload .ui-inplace-save {
+    display: none;
+}
+
+.file-upload .ui-inplace-cancel {
+    padding: 5px;
+}
+
+.image-delete {
+    border: 1px solid rgb(174, 208, 234);
+    border-radius: 6px;
+    height: 26px;
+    width: 26px;
+    text-align: center;
+    line-height: 26px;
+}
+
+.ui-lightbox-nav-right {
+    display: none !important;
+}
+
+.ui-lightbox-nav-left {
+    display: none !important;
+}
+
+.upload-restrictions {
+    display: block;
+    font-size: 12px;
+    float: left;
+    width: 100%;
+    padding-left: 6px;
+    margin-bottom: 5px;
+}
+
+.image-preview {
+    display: block;
+    max-width: 100%;
+    max-height: 150px;
+    margin: 0 auto;
+}
