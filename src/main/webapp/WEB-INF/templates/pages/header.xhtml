@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<body>
+<ui:composition>
+    <noscript>
+        <h1><h:outputText value="#{msg.no_javascript_message}"/></h1>
+        <hr/>
+    </noscript>
+    <div class="header">
+        <div class="logo">
+            <h:link outcome="index">
+                <h:graphicImage library="images" name="logo.png" width="100" height="100"/>
+            </h:link>
+        </div>
+
+        <div class="descr">
+            <h3>#{msg.welcome_title}</h3>
+        </div>
+
+        <h:form>
+            <h:panelGroup styleClass="locale-div">
+                <p:commandLink action="#{localeChanger.setLanguage('ru')}" ajax="false"
+                               styleClass="#{localeChanger.locale == 'ru' ? 'locale-active':'locale'}">
+                    <p:graphicImage library="images" name="rus.png" title="#{msg.russian}" styleClass="locale-image"/>
+                </p:commandLink>
+                <p:commandLink action="#{localeChanger.setLanguage('en')}" ajax="false"
+                               styleClass="#{localeChanger.locale == 'en' ? 'locale-active':'locale'}">
+                    <p:graphicImage library="images" name="eng.png" title="#{msg.english}" styleClass="locale-image"/>
+                </p:commandLink>
+            </h:panelGroup>
+        </h:form>
+
+        <h:panelGroup layout="block" id="logout_form" styleClass="welcome" rendered="#{request.userPrincipal != null}">
+            <h:form>
+                <p>#{msg.welcome_user},  #{headerBean.userLogin}</p>
+                <h:commandLink action="#{loginBean.logout}" value="#{msg.logout}"/>
+            </h:form>
+        </h:panelGroup>
+
+        <h:panelGroup layout="block" id="login_register_switch" styleClass="welcome"
+                      rendered="#{request.userPrincipal == null}">
+            <h:form>
+                <p:commandButton value="#{msg.register_button}" update="@parent :content"
+                                 actionListener="#{headerBean.switchRenderedState}"
+                                 rendered="#{headerBean.loginRendered}"/>
+                <p:commandButton value="#{msg.login_button}" update="@parent :content"
+                                 actionListener="#{headerBean.switchRenderedState}"
+                                 rendered="#{not headerBean.loginRendered}"/>
+            </h:form>
+        </h:panelGroup>
+    </div>
+</ui:composition>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:body>
+    <ui:composition>
+        <h:form id="login_form" rendered="#{headerBean.loginRendered}">
+            <p:panel id="panel" header="#{msg.authorization}">
+
+                <p:focus context="panel"/>
+                <p:messages/>
+                <h:panelGrid columns="3">
+                    <p:outputLabel for="login" value="#{msg.login_label}"/>
+                    <p:inputText id="login"
+                                 value="#{loginBean.login}"
+                                 required="true"
+                                 label="#{msg.login_label}"
+                                 requiredMessage="#{msg.require_login}"/>
+                    <p:message for="login"/>
+
+                    <p:outputLabel for="password" value="#{msg.password_label}"/>
+                    <p:password id="password"
+                                value="#{loginBean.password}"
+                                required="true"
+                                label="#{msg.password_label}"
+                                requiredMessage="#{msg.require_password}"/>
+                    <p:message for="password"/>
+
+                    <p:outputLabel for="remember" value="#{msg.remember_label}"/>
+                    <p:selectBooleanCheckbox id="remember"
+                                             value="#{loginBean.remember}"
+                                             label="#{msg.remember_label}"/>
+                </h:panelGrid>
+                <p:commandButton id="submitButton"
+                                 value="#{msg.login_button}"
+                                 ajax="false"
+                                 action="#{loginBean.login}"/>
+            </p:panel>
+        </h:form>
+    </ui:composition>
+</h:body>
+</html>
