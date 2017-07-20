@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+    http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <!--APPLICATION-->
+    <application>
+        <locale-config>
+            <default-locale>en</default-locale>
+            <supported-locale>ru</supported-locale>
+        </locale-config>
+        <resource-bundle>
+            <base-name>locales/messages</base-name>
+            <var>msg</var>
+        </resource-bundle>
+
+        <!--SPRING-->
+        <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+    </application>
+    <!--APPLICATION-->
+
+    <!--NAVIGATION-->
+    <navigation-rule>
+        <from-view-id>/*</from-view-id>
+        <navigation-case>
+            <!--global redirect to main page-->
+            <from-outcome>root</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>main</from-outcome>
+            <to-view-id>/pages/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/pages/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>pages</from-outcome>
+            <to-view-id>/pages/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <!--NAVIGATION-->
+
+
+</faces-config>
