@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:body>
+
+    <ui:composition>
+        <f:facet name="actions">
+            <h:outputText styleClass="task-clock-right fa fa-clock-o"
+                          style="color: #{taskPanelBean.getColorForTask(task)};"
+                          rendered="#{task.date != null}"/>
+
+            <p:commandLink styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default"
+                           action="#{taskPanelBean.deleteTask(task)}"
+                           ajax="false">
+                <p:confirm/>
+                <h:outputText styleClass="ui-icon ui-icon-trash"/>
+            </p:commandLink>
+
+            <p:confirmDialog global="true"
+                             showEffect="fade"
+                             hideEffect="fade"
+                             header="#{msg.task_delete_question}"
+                             message="#{msg.are_you_shure}"
+                             icon="ui-icon-alert">
+                <p:commandButton value="#{msg.yes}" type="button" styleClass="ui-confirmdialog-yes"
+                                 icon="ui-icon-check"/>
+                <p:commandButton value="#{msg.no}" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>
+            </p:confirmDialog>
+        </f:facet>
+    </ui:composition>
+</h:body>
+</html>

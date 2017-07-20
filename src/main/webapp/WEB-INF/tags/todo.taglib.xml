@@ -1,0 +1,43 @@
+<facelet-taglib xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                version="2.2"
+                xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+                xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee">
+    <namespace>http://epamlab.gsu.by/todoapp</namespace>
+    <tag>
+        <tag-name>task</tag-name>
+        <source>task.xhtml</source>
+        <attribute>
+            <name>key</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>task</name>
+            <type>com.eisgroup.tasktracker.model.Task</type>
+        </attribute>
+    </tag>
+
+    <tag>
+        <tag-name>taskTitle</tag-name>
+        <source>taskTitle.xhtml</source>
+    </tag>
+
+    <tag>
+        <tag-name>taskDate</tag-name>
+        <source>taskDate.xhtml</source>
+    </tag>
+
+    <tag>
+        <tag-name>taskCommandButtons</tag-name>
+        <source>taskCommandButtons.xhtml</source>
+    </tag>
+
+    <tag>
+        <tag-name>subTaskList</tag-name>
+        <source>subTaskList.xhtml</source>
+    </tag>
+
+    <tag>
+        <tag-name>taskImage</tag-name>
+        <source>taskImage.xhtml</source>
+    </tag>
+</facelet-taglib>

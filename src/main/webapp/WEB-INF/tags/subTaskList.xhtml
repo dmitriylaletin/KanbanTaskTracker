@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:body>
+
+    <ui:composition>
+        <ui:repeat value="#{task.subTasks}" var="subTask" id="sub_#{key}">
+            <!--TRASH-->
+            <p:commandButton icon="fa fa-trash" styleClass="task-icons"
+                             actionListener="#{subTaskBean.deleteSubTask(task,subTask)}"
+                             update="@form"/>
+
+            <!--CHECKBOX-->
+            <h:selectBooleanCheckbox value="#{subTask.done}" styleClass="subtask-checkbox">
+                <f:ajax event="change" render="@form" listener="#{taskPanelBean.updateTask(task)}"/>
+            </h:selectBooleanCheckbox>
+
+            <!--SUBTASK TITLE-->
+            <p:inplace editor="true" style="text-decoration: #{subTaskBean.getStyle(subTask)};">
+                <p:inputText value="#{subTask.text}" required="true" maxlength="50" styleClass="subtask-input"/>
+                <p:ajax event="save" listener="#{taskPanelBean.updateTask(task)}" update="@form"/>
+            </p:inplace>
+            <br/>
+        </ui:repeat>
+
+        <!--ADD NEW SUBTASK-->
+        <p:inplace editor="true" styleClass="fa fa-file-text-o new-subtask-inplace" label="#{msg.add_subtask}">
+            <p:inputText value="#{subTaskBean.newSubTasks}" maxlength="50" styleClass="new-subtask-input"/>
+            <p:ajax event="save" listener="#{subTaskBean.addSubTask(task)}" update="@form"/>
+        </p:inplace>
+    </ui:composition>
+</h:body>
+</html>

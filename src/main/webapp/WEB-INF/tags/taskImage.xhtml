@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<head>
+</head>
+<h:body>
+    <ui:composition>
+        <p:inplace styleClass="fa fa-file-picture-o file-upload" label="#{msg.image_label}" editor="true">
+            <h:outputText value="#{msg.upload_restrictions}" styleClass="upload-restrictions"/>
+
+            <p:fileUpload fileUploadListener="#{imageBean.upload}"
+                          auto="true"
+                          label="#{msg.upload_image_button}"
+                          oncomplete="location.reload();"
+                          allowTypes="/(\.|\/)(gif|jpe?g|png)$/"
+                          sizeLimit="3145728"
+                          update="@form">
+
+                <f:attribute name="task" value="#{task}"/>
+            </p:fileUpload>
+
+            <p:commandLink
+                    actionListener="#{imageBean.deleteImage(task)}" update="@form">
+                <h:outputText styleClass="fa fa-align-center fa-trash image-delete"/>
+            </p:commandLink>
+
+        </p:inplace>
+
+        <p:lightBox rendered="#{task.image != null}">
+            <h:outputLink value="#{request.contextPath}/showImage?id=#{task.id}">
+                <p:graphicImage
+                        value="/showImage?id=#{task.id}&amp;preview=1&amp;no_cache=#{imageService.getNoCacheToken(task)}"
+                        styleClass="image-preview"/>
+            </h:outputLink>
+        </p:lightBox>
+    </ui:composition>
+</h:body>
+</html>
