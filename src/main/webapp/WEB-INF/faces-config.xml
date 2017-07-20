@@ -24,7 +24,7 @@
         <from-view-id>/*</from-view-id>
         <navigation-case>
             <!--global redirect to main page-->
-            <from-outcome>root</from-outcome>
+            <from-outcome>root/</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
