@@ -66,7 +66,6 @@ public class DashboardBean implements Serializable{
                 columnDone.addWidget(widgetId);
             }
         }
-
         model.addColumn(columnIdea);
         model.addColumn(columnTodo);
         model.addColumn(columnDone);

@@ -52,7 +52,4 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
-    <!--NAVIGATION-->
-
-
 </faces-config>
