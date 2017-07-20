@@ -3,7 +3,7 @@ body {
     background-color: #EEE;
     margin: 0;
     padding: 0;
-    color: #000;
+    color: #2c8267;
     font-size: 13px;
     height: 100%;
 }
@@ -38,14 +38,16 @@ a:hover, a:active, a:focus {
 }
 
 .container {
-    width: 1000px;
+    width: 2000px;
     background-color: #FFFFFF;
     margin: 0 auto;
 }
 
 .header {
+    text-align: center;
     background-color: #FFFFFF;
     height: 150px;
+    width: 100%;
 }
 
 .footer {
@@ -79,7 +81,7 @@ a:hover, a:active, a:focus {
 .descr {
     float: left;
     width: 400px;
-    text-align: left;
+    text-align: center;
     padding-top: 50px;
 }
 
