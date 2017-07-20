@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:todo="http://epamlab.gsu.by/todoapp">
+<h:body>
+    <ui:composition>
+        <h:form onkeypress="if (event.keyCode == 13) { return false;}">
+
+            <p:dashboard id="dashboard" model="#{dashboardBean.model}">
+                <p:ajax event="reorder" listener="#{dashboardBean.handleReorder}" update="@form"/>
+
+                <c:forEach items="#{widgetMap.widgetMap}" var="taskEntry">
+
+                    <todo:task key="#{taskEntry.key}" task="#{taskEntry.value}"/>
+
+                </c:forEach>
+
+            </p:dashboard>
+
+
+        </h:form>
+    </ui:composition>
+
+
+</h:body>
+</html>
