@@ -2,7 +2,7 @@
                 version="2.2"
                 xmlns="http://xmlns.jcp.org/xml/ns/javaee"
                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee">
-    <namespace>http://epamlab.gsu.by/todoapp</namespace>
+    <namespace>http://tasktracker.eisgroup.com/todoapp</namespace>
     <tag>
         <tag-name>task</tag-name>
         <source>task.xhtml</source>
